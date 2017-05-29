@@ -1,17 +1,15 @@
 
-public class NoseCone extends Rocket {
+public class NoseCone{
 	private double mass;
-	private double coefficientOfDrag;
 	private double surfaceArea;
 	private String shape;
 	private double length;
 	private double diameter;
+	private String material;
 	
-	public NoseCone(double mass, double CoD, double surfaceArea, String shape, double length, double diameter) {
-		super (mass, CoD, surfaceArea, length);
+	//Material can vary from plastic and foam
+	public NoseCone(double mass, String shape, double length, double diameter, String material) {
 		this.mass = mass;
-		this.coefficientOfDrag = CoD;
-		this.surfaceArea = surfaceArea;
 		this.shape = shape;
 		this.length = length;
 		this.diameter = diameter;
@@ -20,12 +18,18 @@ public class NoseCone extends Rocket {
 	public double getMass(){
 		return this.mass;
 	}
-	
-	public double getCoD(){
-		//Need equations for calculation
-		return this.coefficientOfDrag;
+
+	public double getMaterial(){
+		return this.material;
 	}
 	
+	//Need CoD numbers for each material
+	public double getCoD(){
+		if (material.equals("plastic") || material.contains("fiber"))
+			return 0.0;
+		else if (material.equals("foam"))
+			return 0.0;
+	}
 	public double getSurfaceArea(){
 		//Need equations for calculation
 		return this.surfaceArea;
