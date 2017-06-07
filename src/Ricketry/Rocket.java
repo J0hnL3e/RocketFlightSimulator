@@ -12,7 +12,8 @@ public class Rocket {
 		this.coefficientOfDrag = CoD;
 	}
 
-	public Rocket(NoseCone nc, Motor m, Fins f, Body b){
+	public Rocket(NoseCone nc, Body b, Parachute p, Fins f, Motor m){
+		this.mass = nc.getMass() + b.getMass();
 		
 	}
 	

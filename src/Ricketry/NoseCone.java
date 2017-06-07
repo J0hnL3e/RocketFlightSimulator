@@ -46,5 +46,6 @@ public class NoseCone{
 	public double getDiameter(){
 		return this.diameter;
 	}
-
+	
+	
 }

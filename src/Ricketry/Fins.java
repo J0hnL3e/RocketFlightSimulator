@@ -2,39 +2,28 @@ package Ricketry;
 public class Fins{
 	
 	private double mass;
-	private String material;
-	private double surfaceArea;
+	private double rootChordLength;
+	private double tipChordLength;
+	private double sweepAng;
+	private double height;
 	
-	//Instead of asking for slant height and all those, just using Surface Area
-	//Available Materials: Plywood, Cardboard (Tube), Fiber-glass/tube, Balsa
-	public Fins(double mass, double surfaceArea, String material){
+	//Material is defaulted to plywood 
+	public Fins(double rootChordLength, double tipChordLength, double sweepAng, double height, double mass){
 		this.mass = mass;
-		this.surfaceArea = surfaceArea;
-		this.material = material;
+
 	}
 	
 	public double getMass(){
 		return this.mass;
 	}
 	
-	public String getMaterial(){
-		return this.material;
-	}
-	
 	public double getSurfaceArea(){
-		return this.surfaceArea;
+		//Need calculations
+		return 0.0;
 	}
 	
 	//Needs numbers for CoD
 	public double getCoD(){
-		if (material.equals("plywood"))
-			return 0.0;
-		else if (material.equals("carboard") || material.equals("tube"))
-			return 0.0;
-		else if (material.contains("fiber"))
-			return 0.0;
-		else if (material.equals("balsa"))
-			return 0.0;
-		return 0.0;
+		return 90.0;
 	}
 }
