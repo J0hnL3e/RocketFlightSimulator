@@ -17,11 +17,11 @@ public class Flight {
 		String[] noseconeStrings = main.nextLine().split(",");
 		NoseCone tip = new NoseCone(noseconeDoubles[0], noseconeStrings[0], noseconeDoubles[1], noseconeDoubles[2], noseconeStrings[1]);
 		//Getting motor dimensions
-		System.out.print("Motor: Please enter the thrust and mass: ");
+		System.out.print("Motor: Please enter the thrust and mass and times for delay and burn of the motor: ");
 		String[] motorTemp = main.nextLine().split(",");
 		double[] motorDoubles = divideNumericalParts(motorTemp);
 		//double[] motorDoubles = {Double.parseDouble(motorTemp[0]), Double.parseDouble(motorTemp[1])};
-		Motor end = new Motor(motorDoubles[0], motorDoubles[1]);
+		Motor end = new Motor(motorDoubles[0], motorDoubles[1], motorDoubles[2], motorDoubles[3]);
 		//Getting Parachute Dimensions
 		System.out.print("Parachute: Please enter the diameter, mass, and CoD: ");
 		String[] parTemp = main.nextLine().split(",");
@@ -39,7 +39,8 @@ public class Flight {
 		Fins drag = new Fins(finDoubles[0], finDoubles[1], finDoubles[2], finDoubles[3], finDoubles[4]);
 		//Constructing Rocket
 		Rocket rick = new Rocket(tip, airframe, fall, drag, end);
-		System.out.println("Rocket has been created. Boom!");
+		System.out.println("Rocket has been created.");
+		System.out.println("Estimated altitude is... " + rick.flight() + "ft." );
 		/*String[] rocketParts = {"NoseCone", "Body", "Fins", "Motor", "Parachute"};
 		for (int i = 0; i < rocketParts.length; i++){
 			String rocketPart = rocketParts[i];

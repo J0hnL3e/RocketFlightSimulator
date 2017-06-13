@@ -6,6 +6,7 @@ public class NoseCone{
 	private double length;
 	private double diameter;
 	private String material;
+	private double C;
 	//Test
 	//Material can vary from plastic and foam
 	public NoseCone(double mass, String shape, double length, double diameter, String material) {
@@ -13,6 +14,7 @@ public class NoseCone{
 		this.shape = shape;
 		this.length = length;
 		this.diameter = diameter;
+		this.C = length/diameter;
 	}
 	
 	public double getMass(){
@@ -31,10 +33,16 @@ public class NoseCone{
 			return 0.0;
 		return 0.0;
 	}
+
 	public double getSurfaceArea(){
-		//Need equations for calculation
-		return this.surfaceArea;
+		if(shape.equals("conical")){
+			return (3.14159)* Math.pow((diameter/2), 2) + (3.14159)*(diameter/2)*(Math.sqrt(Math.pow(diameter/2,2)+Math.pow(this.length, 2)));
+		}
+		else{
+			return 0.0;
+		}
 	}
+
 	
 	public String getShape(){
 		return this.shape;
