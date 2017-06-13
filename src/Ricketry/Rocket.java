@@ -4,15 +4,8 @@ public class Rocket {
 	private double mass;
 	private double thrust;
 	private double surfaceArea;
-	private double coefficientOfDrag;
 	private double burnTime;
 	private double motorMass;
-	
-	
-	public Rocket(double mass, double CoD, double surfaceArea, double length) {
-		this.mass += mass;
-		this.coefficientOfDrag = CoD;
-	}
 
 	public Rocket(NoseCone nc, Body b, Parachute p, Fins f, Motor m){
 		this.mass = nc.getMass() + b.getMass();		

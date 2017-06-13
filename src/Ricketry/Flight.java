@@ -2,7 +2,7 @@ package Ricketry;
 import java.util.Scanner;
 public class Flight {
 	public static void main(String[] args) {
-		System.out.println("Welcome to the Ricketry Flight Simulator. Please enter rocket dimensions when specified, separated by commas.");
+		System.out.println("Welcome to the Ricketry Flight Simulator. Please enter rocket dimensions when specified, separated by commas. Mass is in kg, while Length/Diameter is in meters.");
 		Scanner main = new Scanner(System.in);
 		//Getting NoseCone dimensions
 		System.out.print("Nosecone: Please enter the mass, length, and diameter: ");

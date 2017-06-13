@@ -18,7 +18,8 @@ public class NoseCone{
 	}
 
 	public double getSurfaceArea(){
-			return (3.14159)* Math.pow((diameter/2), 2) + (3.14159)*(diameter/2)*(Math.sqrt(Math.pow(diameter/2,2)+Math.pow(this.length, 2)));
+			return (3.14159)* Math.pow((diameter/2), 2) + (3.14159)*(diameter/2)*
+					(Math.sqrt(Math.pow(diameter/2,2)+Math.pow(this.length, 2)));
 	}
 	
 	public double getLength(){
