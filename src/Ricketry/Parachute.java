@@ -5,9 +5,8 @@ public class Parachute {
 	private double diameter;
 	private double surfaceArea;
 	private double mass;
-	private double coefficientOfDrag;
 	
-	public Parachute(double diameter, double mass, double CoD) {
+	public Parachute(double diameter, double mass) {
 		this.diameter = diameter;
 		this.mass = mass;
 		this.surfaceArea = Math.PI * (diameter/2) * (diameter/2);
@@ -21,5 +20,10 @@ public class Parachute {
 	public double getSurfaceArea(){
 		return this.surfaceArea;
 	}
+	
+	public double getDiameter(){
+		return this.diameter;
+	}
+	
 
 }

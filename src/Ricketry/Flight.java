@@ -8,25 +8,17 @@ public class Flight {
 		System.out.print("Nosecone: Please enter the mass, length, and diameter: ");
 		String[] ncTemp = main.nextLine().split(",");
 		double[] noseconeDoubles = divideNumericalParts(ncTemp);
-		/*
-		double[] noseconeDoubles = new double[3];
-		for (int i = 0; i < temp.length; i++){
-			noseconeDoubles[i] = Double.parseDouble(temp[i]);
-		} */
-		System.out.print("Nosecone: Please enter the shape and material: ");
-		String[] noseconeStrings = main.nextLine().split(",");
-		NoseCone tip = new NoseCone(noseconeDoubles[0], noseconeStrings[0], noseconeDoubles[1], noseconeDoubles[2], noseconeStrings[1]);
+		NoseCone tip = new NoseCone(noseconeDoubles[0], noseconeDoubles[1], noseconeDoubles[2]);
 		//Getting motor dimensions
-		System.out.print("Motor: Please enter the thrust and mass and times for delay and burn of the motor: ");
+		System.out.print("Motor: Please enter the mass and thrust and times for delay and burn of the motor: ");
 		String[] motorTemp = main.nextLine().split(",");
 		double[] motorDoubles = divideNumericalParts(motorTemp);
-		//double[] motorDoubles = {Double.parseDouble(motorTemp[0]), Double.parseDouble(motorTemp[1])};
 		Motor end = new Motor(motorDoubles[0], motorDoubles[1], motorDoubles[2], motorDoubles[3]);
 		//Getting Parachute Dimensions
-		System.out.print("Parachute: Please enter the diameter, mass, and CoD: ");
+		System.out.print("Parachute: Please enter the diameter and mass: ");
 		String[] parTemp = main.nextLine().split(",");
 		double[] parDoubles = divideNumericalParts(parTemp);
-		Parachute fall = new Parachute(parDoubles[0], parDoubles[1], parDoubles[2]);
+		Parachute fall = new Parachute(parDoubles[0], parDoubles[1]);
 		//Getting Body Dimensions
 		System.out.print("Body: Please enter the mass, length, and diameter: ");
 		String[] bodTemp = main.nextLine().split(",");
@@ -40,14 +32,7 @@ public class Flight {
 		//Constructing Rocket
 		Rocket rick = new Rocket(tip, airframe, fall, drag, end);
 		System.out.println("Rocket has been created.");
-		System.out.println("Estimated altitude is... " + rick.flight() + "ft." );
-		/*String[] rocketParts = {"NoseCone", "Body", "Fins", "Motor", "Parachute"};
-		for (int i = 0; i < rocketParts.length; i++){
-			String rocketPart = rocketParts[i];
-			if (rocketPart.equals("NoseCone")){
-				for (int i = 0; i < )
-			}
-		}*/
+		System.out.println("Estimated altitude is... " + rick.flight() + "meters" );
 		main.close();
 		
 	}

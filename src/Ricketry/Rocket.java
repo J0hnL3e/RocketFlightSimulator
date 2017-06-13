@@ -19,6 +19,7 @@ public class Rocket {
 		this.thrust = m.getThrust();
 		this.burnTime = m.getBurnTime();
 		this.motorMass = m.getMass();
+		this.surfaceArea = nc.getSurfaceArea() + b.getSurfaceArea() + f.getSurfaceArea();
 	}
 	
 	public double flight() {
@@ -35,7 +36,7 @@ public class Rocket {
 		
 		I = this.thrust;
 		v = I/m;
-		D = 0.5 * Cd * p * Math.pow(v, 2) * a;
+		D = 0.5 * Cd * p * Math.pow(v, 2) * this.surfaceArea;
 		F = I/burnTime;
 		F -= D;
 		I = F * burnTime;

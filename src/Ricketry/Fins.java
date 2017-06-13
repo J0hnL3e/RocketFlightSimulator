@@ -16,19 +16,19 @@ public class Fins{
 		this.height = height;
 	}
 	
-	public double getSurfaceArea(double rootchord, double tipchord, double sweep, double height){
+	public double getSurfaceArea(){
 		//pl1 = partial length 1
-		double pl1 = Math.tan(sweep)*4;
+		double pl1 = Math.tan(this.sweepAng)*4;
 		//pa1 = partial area 1
-		double pa1 = Math.sqrt(Math.pow(pl1, 2) + Math.pow(height,2));
+		double pa1 = Math.sqrt(Math.pow(pl1, 2) + Math.pow(this.height,2));
 		//pl2 = partial length 2 
-		double pl2 = tipchord - pl1;
+		double pl2 = this.tipChordLength - pl1;
 		//pa2 = partial area 2
-		double pa2 = pl2 * height;
+		double pa2 = pl2 * this.height;
 		//pl3 = partial area 3
-		double pl3 = rootchord - pl1;
+		double pl3 = this.rootChordLength - pl1;
 		//pa3 = partial area 3
-		double pa3 = Math.sqrt(Math.pow(pl3, 2) + Math.pow(height,2));
+		double pa3 = Math.sqrt(Math.pow(pl3, 2) + Math.pow(this.height,2));
 		return 2 * (pa1+ pa2 + pa3);
 	}
 
